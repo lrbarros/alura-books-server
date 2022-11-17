@@ -1,10 +1,10 @@
 const express = require('express')
+const routerLivros = require('./routes/livros')
 const app = express()
 const port = 8000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/livros', routerLivros)
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
